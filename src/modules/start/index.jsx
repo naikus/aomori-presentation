@@ -5,6 +5,11 @@ import {notify} from "@components/notifications/Notifications";
 import Map from "@components/map/JapanMap";
 import "./style.less";
 
+import img1 from "/assets/1.svg";
+import img2 from "/assets/2.svg";
+import img3 from "/assets/3.svg";
+import img4 from "/assets/4.svg";
+
 export default{
   id: "start",
   template: `<div class="stage-view start"></div>`,
@@ -37,22 +42,22 @@ export default{
                             <span>季節：</span>
                             <ul class="section seasons">
                               <li class="spring">
-                                <img src="/assets/3.svg" />
+                                <img src={img3} />
                                 <span class="s">春</span>
                                 <span>(3月-5月)</span>
                               </li>
                               <li class="summer">
-                                <img src="/assets/1.svg" />
+                                <img src={img1} />
                                 <span class="s">夏</span>
                                 <span>(6月-8月)</span>
                               </li>
                               <li class="autumn">
-                                <img src="/assets/4.svg" />
+                                <img src={img4} />
                                 <span class="s">秋</span>
                                 <span>(9月-11月)</span>
                               </li>
                               <li class="winter">
-                                <img src="/assets/2.svg" />
+                                <img src={img2} />
                                 <span class="s">冬</span>
                                 <span>(12月-2月)</span>
                               </li>
