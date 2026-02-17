@@ -1,0 +1,66 @@
+@import "@less/vars.less";
+
+.map-container {
+  width: auto;
+  // position: relative;
+}
+.map__map {
+  display: block;
+  width: inherit;
+  fill: rgba(0,0,0,0.4);
+
+  .map__area {
+    &:hover {
+      opacity: 0.4;
+      fill: var(--primary-bg-color);
+    }
+  }
+
+  .label {
+    fill: var(--text-color);
+    font-size: 0.8em;
+  }
+
+  path[data-id="tohoku"] {
+    fill: var(--primary-bg-color);
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  g[data-id=tohoku-info] {
+    transform: translate(289px, 115px);
+    
+    circle[data-id="tohoku-aomori"] {
+      fill: rgb(216, 59, 59);
+      stroke: white;
+    }
+
+    text[data-id=tohoku-label] {
+      transform: translate(-150px, 40px);
+      font-family: inherit;
+    }
+    line[data-id=tohoku-line] {
+      transform: translate(-90px, 35px);
+      stroke: var(--text-color);
+    }
+
+    text[data-id=aomori-label] {
+      transform: translate(-180px, 5px);
+      font-family: inherit;
+    }
+    line[data-id=aomori-line] {
+      transform: translate(-50px, 0);
+      stroke: var(--text-color);
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .map__map {
+    width: 100%;
+    left: 0;
+  }
+}

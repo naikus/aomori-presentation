@@ -1,0 +1,207 @@
+@import "@less/vars.less";
+
+.stage-view.start {
+  .content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    padding: 0;
+
+    h1, h2 {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0;
+      // padding: @padding-default;
+      background-color: rgba(0,0,0,0.06);
+      font-size: 2em;
+    }
+  }
+
+  .card {
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--alt-bg-color);
+    border-radius: @base-border-radius * 2;
+    padding: @padding-container;
+    border: 1px solid rgba(0,0,0,0.06);
+    > img {
+      border-radius: @base-border-radius * 2 - 4px;
+      object-fit: cover;
+      height: 100px;
+      display: none;
+    }
+    .card-title {
+      padding-top: @padding-default;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .card-content {
+      text-wrap: wrap;
+    }
+
+    li.no-hover {
+      background-color: transparent !important;
+    }
+
+    .card-info-list {
+      list-style-type: none;
+      padding: @padding-tiny 0 0 0;
+      margin: 0;
+      font-size: 0.9em;
+      > li {
+        padding: @padding-tiny;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        // background-color: rgba(0,0,0,0.03);
+        // margin-bottom: 2px;
+        &:hover {
+          background-color: rgba(0,0,0,0.07);
+        }
+      }
+    }
+
+    .seasons {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      padding-top: @padding-tiny;
+      > li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 25%;
+        border-radius: @base-border-radius;
+        // height: 60px;
+        padding-top: @padding-tiny 0;
+        &:hover {
+          background-color: rgba(0,0,0,0.07);
+        }
+        span {
+          font-size: 0.8em;
+        }
+        span.s {
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .p-slide {
+    .title {
+      font-weight: 500;
+    }
+
+    .body {
+      padding-top: 25px;
+    }
+
+    .map-container {
+      width: 100%;
+      .map__map {
+        transition: width ease-in 400ms;
+      }
+    }
+
+    .info {
+      overflow: auto;
+      max-height: 60%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      // height: 300px;
+    }
+  }
+}
+
+
+
+
+@media only screen and (min-width: @screen-sm) {
+  .stage-view.start {
+    .p-slide {
+      .body {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .map {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex: 6;
+        position: relative;
+        .map-container {
+          // width: 100%;
+          .map__map {
+            // width: 140%;
+          }
+        }
+      }
+
+      .info {
+        box-sizing: border-box;
+        display: flex;
+        position: static;
+        flex: 5;
+        // justify-content: center;
+        .card {
+          // flex-direction: row;
+          width: 85%;
+          min-height: 450px;
+          > img {
+            display: block;
+            // width: 300px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: @screen-lg) {
+  .stage-view.start {
+    .p-slide {
+      .map {
+        flex: 3;
+        .map-container {
+          // width: 80%;
+          .map__map {
+            width: 85%;
+          }
+        }
+      }
+
+      .info {
+        box-sizing: border-box;
+        display: flex;
+        position: static;
+        flex: 2;
+        justify-content: center;
+        align-items: flex-start;
+        .card {
+          align-items: center;
+          // flex-direction: row;
+          // width: 400px;
+          > img {
+            margin-top: @padding-container;
+            display: block;
+            width: 300px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}

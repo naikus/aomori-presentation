@@ -1,0 +1,99 @@
+@import "@less/vars.less";
+@import "less/base.less";
+@import "less/html-controls.less";
+
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  color-scheme: dark;
+}
+
+
+.stage-view {
+  padding-left: 0;
+  // padding-top: @appbar-width;
+  background-color: var(--bg-color);
+  -webkit-overflow-scrolling: touch;
+
+  > .content {
+    box-sizing: border-box;
+    padding: @padding-container + @padding-smaller;
+    width: 100%;
+  }
+}
+
+.view-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.route-progress {
+  position: fixed;
+  top: 0;
+  z-index: 98;
+}
+
+.slide-fade {
+  .stage-view {
+    opacity: 0;
+    transform: translate3d(30%, 0, 0);
+    // transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1), opacity 200ms ease;
+    transition: transform 300ms cubic-bezier(0.2, 0.4, 0.11, 1),
+        opacity 300ms cubic-bezier(0.2, 0.4, 0.11, 1);
+    
+    &.pop {
+      transform: translate3d(30%, 0, 0);
+      opacity: 0;
+    }
+
+    &.in {
+      // .translateY(0); Fixed position elements won't work with this
+      transform: none;
+      opacity: 1;
+    }
+
+    &.stack {
+      // transition: transform 650ms cubic-bezier(0.2, 0.4, 0.11, 1), opacity 500ms cubic-bezier(0.2, 0.4, 0.11, 1);
+      transform: translate3d(-30%, 0, 0);
+      opacity: 0;
+    }
+  }
+}
+
+
+.p-slide {
+  .title {
+    font-size: 2.5em;
+  }
+  .body {
+    padding-top: @padding-container*2;
+  }
+}
+.navigation {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+
+  .nav-button {
+    fill: var(--primary-bg-color);
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+    &.previous {
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }  
+}
+
+@import "branding/@{branding}/less/index.less";
