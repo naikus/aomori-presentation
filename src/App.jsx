@@ -22,13 +22,18 @@ import "./style.less";
 
 function NavButton(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" 
-        id="Bold"
-        viewBox="0 0 24 24"
-        width="32"
-        height="32">
-      <path onclick={props.onClick} class={`nav-button ${props.class}`}
-        d="M20.492,7.969,10.954.975A5,5,0,0,0,3,5.005V19a4.994,4.994,0,0,0,7.954,4.03l9.538-6.994a5,5,0,0,0,0-8.062Z"/>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class={`nav-button ${props.class}`}>
+        <path d="M10.5 9L13.5 12L10.5 15" 
+            stroke-width="2.5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+        <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" 
+            fill="transparent"
+            onClick={props.onClick}
+            stroke-width="2.5" 
+            stroke-linecap="round"/>
+      </g>
     </svg>
   );
 }
