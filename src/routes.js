@@ -35,6 +35,44 @@ export default [
     }
   },
   {
+    path: "/economy{\\?*query}",
+    controller(context) {
+      const {route} = context;
+      route.params = extractQueryParams(route);
+
+      return import("./modules/economy/index").then(viewDef => {
+        return {
+          view: {
+            id: "economy",
+            viewDef: viewDef.default || viewDef,
+            config: {
+              actionBar: false
+            }
+          }
+        };
+      });
+    }
+  },
+  {
+    path: "/tourism_culture{\\?*query}",
+    controller(context) {
+      const {route} = context;
+      route.params = extractQueryParams(route);
+
+      return import("./modules/tourism-culture/index").then(viewDef => {
+        return {
+          view: {
+            id: "tourism_culture",
+            viewDef: viewDef.default || viewDef,
+            config: {
+              actionBar: false
+            }
+          }
+        };
+      });
+    }
+  },
+  {
     path: "/about{\\?*query}",
     controller(context) {
       const {route} = context;
@@ -51,17 +89,6 @@ export default [
           }
         };
       });
-    }
-  },
-  {
-    path: "/handler",
-    controller(context) {
-      return {
-        handler() {
-          console.log("Handler route", context);
-          notify.info(`Handling route ${context.route.runtimePath}`);
-        }
-      };
     }
   }
 ];

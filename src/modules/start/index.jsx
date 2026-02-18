@@ -21,7 +21,6 @@ export default{
           return (
             <div class="content">
               <div class="p-slide start">
-                <h1 class="title">青森県</h1>
                 <div class="body">
                   <div class="map">
                     <Map />

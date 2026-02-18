@@ -7,8 +7,8 @@ import aoMoriFlag from "../../assets/aomori-flag.svg";
 import "./style.less";
 
 export default {
-  id: "about",
-  template: `<div class="stage-view no-actionbar about"></div>`,
+  id: "economy",
+  template: `<div class="stage-view no-actionbar economy"></div>`,
   factory(appContext, viewUi, viewConfig) {
     const goBack = _ => appContext.getRouter().back(),
         [viewOptions, setViewOptions] = createSignal({}),
@@ -20,15 +20,8 @@ export default {
           return (
             <div class="content text-center">
               <div class="p-slide">
+                <div class="title">けいざい</div>
                 <div class="body">
-                  <img src={aoMoriFlag} />
-                  <p>おわり！</p>
-                  <span class="attribution">
-                    Made with <span class="love">♥︎</span> by Aniket Naik
-                  </span>
-                  <span class="attribution">
-                    <a target="_blank" href="https://naikus.github.io/stage">Stage.js</a>
-                  </span>
                 </div>
               </div>
             </div>

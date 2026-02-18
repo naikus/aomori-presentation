@@ -159,8 +159,22 @@ function App(props) {
 
     slideNavigator = Navigator(router, [
       "/start",
+      "/economy",
+      "/tourism_culture",
       "/about"
     ]);
+    /*
+    eventUnsubscribes.push(
+      addListener(document, "keyup", e => {
+        const {keyCode} = e;
+        if(keyCode === 39 || keyCode === 32) { // right arrow or space
+          slideNavigator.next();
+        }else if(keyCode === 37) {
+          slideNavigator.previous();
+        }
+      })
+    );
+    */
 
     /*
     // Set theme based on system preference
@@ -184,6 +198,11 @@ function App(props) {
       <div class="navigation">
         <NavButton class="previous" onClick={() => slideNavigator.previous()} />
         <NavButton class="next" onClick={() => slideNavigator.next()} />
+      </div>
+      <div class="caption">
+        <div class="item main">青森県</div>
+        <div class="item">東北 地方</div>
+        <div class="item ">日本</div>
       </div>
       <Show when={isRouteLoading()}>
         <Progress class="route-progress" />

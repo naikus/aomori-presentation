@@ -28,7 +28,7 @@ Prefacture
       - のうぎょ（Agriculture)
         - せいだい（largest) の　そだてて　いる　リンゴ　の　ばしょ
         - アメリカ　と　フランス　に　ゆしゅつさらて（exported）いる
-      - かんこうぎょう（Tourism)
+      - 観光業(かんこうぎょう)（Tourism)
   - Culture and Pop Culture (みんしゅうぶんか)
     - Anime：「借りぐらし（かりぐらし） の ありえってぃ」 は　青森　の　からインスピレーションされ 
       た。

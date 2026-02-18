@@ -22,7 +22,7 @@
 
   > .content {
     box-sizing: border-box;
-    padding: @padding-container + @padding-smaller;
+    // padding: @padding-container + @padding-smaller;
     width: 100%;
   }
 }
@@ -71,17 +71,50 @@
 
 .p-slide {
   .title {
-    font-size: 2.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding: @padding-default;
+    background-color: rgba(0,0,0,0.06);
   }
   .body {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
     padding-top: @padding-container*2;
   }
 }
-.navigation {
+
+
+.caption, .navigation {
   position: fixed;
-  top: 10px;
-  right: 20px;
   z-index: 999;
+  align-items: flex-start;
+  display: flex;
+  top: 24px;
+}
+.caption {
+  left: 20px;
+  z-index: 999;
+  .item {
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.8;
+    padding: 5px;
+    width: 20px;
+    margin-right: 2px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+
+    &.main {
+      opacity: 1;
+    }
+  }
+}
+.navigation {
+  right: 10px;
+  top: 10px;
 
   .nav-button {
     fill: var(--primary-bg-color);
