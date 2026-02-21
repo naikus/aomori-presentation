@@ -1,10 +1,8 @@
 @import "@less/vars.less";
 
 .stage-view.economy {
-  background: url(./images/economy-bg.jpg);
-  background-position: -300px 200px;
-  color: var(--bg-color);
-  padding-top: 0px;
+  background: radial-gradient(rgb(36, 62, 87), rgb(12, 19, 24));
+  color: var(--alt-bg-color);
 
   .p-slide {
     .body {
@@ -30,17 +28,17 @@
 
         .data-list {
           li {
-            background-color: rgba(23, 90, 168, 0.3);
+            // background-color: rgba(23, 90, 168, 0.3);
           }
         }
       }
       img {
-        border: 10px solid rgba(0,0,0,0.3);
+        // border: 10px solid rgba(0,0,0,0.3);
         border-radius: @base-border-radius * 2;
         display: block;
-        margin: 0 1%;
+        margin: @padding-container 1%;
         width: 31.333%;
-        max-height: 200px;
+        max-height: 180px;
         object-fit: cover;
         opacity: 0.8;
         // border-radius: @base-border-radius;

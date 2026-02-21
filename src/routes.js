@@ -46,7 +46,8 @@ export default [
             id: "economy",
             viewDef: viewDef.default || viewDef,
             config: {
-              actionBar: false
+              actionBar: false,
+              transition: "slide-up"
             }
           }
         };
