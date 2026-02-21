@@ -89,13 +89,11 @@ export default{
     let dispose;
 
     return {
-      initialize() {
-        viewUi.addEventListener("transitionout", () => {
-          dispose && dispose();
-        });
+      initialize(viewOpts, done) {
+        viewUi.addEventListener("transitionout", () => (dispose && dispose()));
       },
       activate(viewOpts, done) {
-        renderContent(viewOpts, done);
+        renderContent(viewOpts, done);  
       },
       destroy() {
         dispose();

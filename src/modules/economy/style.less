@@ -1,13 +1,62 @@
 @import "@less/vars.less";
 
 .stage-view.economy {
-  background-color: var(--base-color);
-  // color: var(--text-color);
+  background: url(./images/economy-bg.jpg);
+  background-position: -300px 200px;
+  color: var(--bg-color);
   padding-top: 0px;
 
   .p-slide {
     .body {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      .left, .right {
+        padding: @padding-container;  
+      }
+      .left {
+        box-sizing: border-box;
+        padding: 0 @padding-container;
+        width: 100%;
+        overflow-x: hidden;
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+      .right {
+        flex: 2;
+        padding: @padding-container*2 @padding-container*2.5;
 
+        .data-list {
+          li {
+            background-color: rgba(23, 90, 168, 0.3);
+          }
+        }
+      }
+      img {
+        border: 10px solid rgba(0,0,0,0.3);
+        border-radius: @base-border-radius * 2;
+        display: block;
+        margin: 0 1%;
+        width: 31.333%;
+        max-height: 200px;
+        object-fit: cover;
+        opacity: 0.8;
+        // border-radius: @base-border-radius;
+        // border: 10px solid #fff;
+        // box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+        /**
+            11%: From top, top edge is 11% (down)
+            89%: From left right edge is 89% (to right)
+            82%: From top bottom edge is 85% (from top)
+            21px: From left left edge is 21px (fro left)
+         */
+        // clip-path: rect(11% 89% 82% 21px);
+      }
+      h4 {
+        margin: 0 0 @padding-container;
+      }
     }
   }
 }

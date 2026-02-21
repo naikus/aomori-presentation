@@ -33,17 +33,12 @@ export default {
               </div>
             </div>
           );
-        },
-
-        handleTransitionOut = _ => {
-          // console.log(_);
-          dispose && dispose();
         };
 
     let dispose;
     return {
       initialize(viewOpts) {
-        viewUi.addEventListener("transitionout", handleTransitionOut);
+        viewUi.addEventListener("transitionout", () => (dispose && dispose()));
       },
       activate(viewOpts, done) {
         setViewOptions(viewOpts);

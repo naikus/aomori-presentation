@@ -35,7 +35,7 @@ export default {
     let dispose;
     return {
       initialize(viewOpts) {
-        viewUi.addEventListener("transitionout", handleTransitionOut);
+        viewUi.addEventListener("transitionout", () => (dispose && dispose()));
       },
       activate(viewOpts, done) {
         setViewOptions(viewOpts);
