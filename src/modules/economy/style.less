@@ -33,8 +33,7 @@
         }
       }
       img {
-        // border: 10px solid rgba(0,0,0,0.3);
-        border-radius: @base-border-radius * 2;
+        border: 5px solid rgba(0,0,0,0.4);
         display: block;
         margin: @padding-container 1%;
         width: 31.333%;
@@ -51,9 +50,46 @@
             21px: From left left edge is 21px (fro left)
          */
         // clip-path: rect(11% 89% 82% 21px);
+        transition: transform 300ms ease;
+
+        &:hover {
+          transform: scale(1.05, 1.04);
+          // object-fit: contain;
+        }
+
       }
       h4 {
         margin: 0 0 @padding-container;
+      }
+
+      .pill {
+        background-color: orange;
+        padding: 5px 2px 3px;
+        color: #000;
+        border-radius: 2px;
+      }
+      .data-list {
+        transition: transform 600ms ease, opacity 400ms ease;
+        opacity: 0;
+        transform: translate3d(0, -100px, 0);
+
+        &.show {
+          transform: none;
+          opacity: 1;
+        }
+        margin-bottom: @padding-default;
+
+        > li {
+          font-size: 0.8rem;
+          padding: 5px;
+          margin: 0;
+          padding-left: @padding-default + 4px;
+
+          &.heading {
+            padding-left: @padding-default;
+            border-left-width: 4px;
+          }
+        }
       }
     }
   }

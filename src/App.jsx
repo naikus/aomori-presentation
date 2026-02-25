@@ -171,6 +171,8 @@ function App(props) {
     slideNavigator = Navigator(router, [
       "/start",
       "/economy",
+      "/economy?topic=agri",
+      "/economy?topic=tourism",
       "/tourism_culture",
       "/about"
     ]);
