@@ -17,7 +17,7 @@ export default {
     const goBack = _ => appContext.getRouter().back(),
         [viewOptions, setViewOptions] = createSignal({}),
         Content = function(props) {
-          console.log(viewOptions());
+          // console.log(viewOptions());
           const {appName, appVersion, branding, logo} = appContext.getConfig(),
               [show, setShow] = createSignal(false),
               toggleOverlay = _ => setShow(!show());
@@ -70,9 +70,8 @@ export default {
       },
 
       update(viewOpts) {
-        // console.log(viewOptions);
         setViewOptions(viewOpts);
-        console.log(viewOptions());
+        // console.log(viewOptions());
       },
 
       destroy() {
