@@ -11,7 +11,7 @@
   "dependencies": {
     "@naikus/stage": "1.0.7-beta",
     "normalize.css": "8.0.1",
-    "simple-router": "github:naikus/simple-router#cleanup-auto-abort",
+    "simple-router": "github:naikus/simple-router",
     "solid-js": "^1.9.7"
   },
   "devDependencies": {
